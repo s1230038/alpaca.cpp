@@ -42,11 +42,12 @@ make chat
 ## Building from Source (Windows)
 
 - Download and install CMake: <https://cmake.org/download/>
+- Download and install Build Tools for Visual Studio 2022: https://visualstudio.microsoft.com/ja/downloads/ Click "Tools for Visual Studio" > "Build Tools for Visual Studio 2022"
+- To download and install nmake, import from .vsconfig in this repository with Visual Studio Installer: https://learn.microsoft.com/ja-jp/visualstudio/install/import-export-installation-configurations?view=vs-2022#import-a-configuration
 - Download and install `git`. If you've never used git before, consider a GUI client like <https://desktop.github.com/>
 - Clone this repo using your git client of choice (for GitHub Desktop, go to File -> Clone repository -> From URL and paste `https://github.com/antimatter15/alpaca.cpp` in as the URL)
-- Open a Windows Terminal inside the folder you cloned the repository to
+- Open Developer PowerShell for VS 2022 and move into the folder you cloned the repository to
 - Run the following commands one by one:
-
 ```ps1
 cmake .
 cmake --build . --config Release
@@ -55,7 +56,7 @@ cmake --build . --config Release
 - Download the weights via any of the links in "Get started" above, and save the file as `ggml-alpaca-7b-q4.bin` in the main Alpaca directory.
 - In the terminal window, run this command:
 ```ps1
-.\Release\chat.exe
+.\Release\chat.exe -m ggml-alpaca-7b-q4.bin
 ```
 - (You can add other launch options like `--n 8` as preferred onto the same line)
 - You can now type to the AI in the terminal and it will reply. Enjoy!
